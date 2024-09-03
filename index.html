@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rajalekshmi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            color: #880e4f;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('images.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gift-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .lid, .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s ease-in-out;
+        }
+
+        .lid {
+            background-color: #ff4081;
+            transform: rotateX(0deg) translateZ(100px);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .box {
+            background-color: #ffffff;
+            border: 5px solid #ff4081;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+
+        .ribbon {
+            position: absolute;
+            background-color: #ff4081;
+        }
+
+        .ribbon.vertical {
+            width: 20px;
+            height: 100%;
+            left: 90px;
+            top: 0;
+        }
+
+        .ribbon.horizontal {
+            width: 100%;
+            height: 20px;
+            top: 90px;
+            left: 0;
+        }
+
+        .open-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ec407a;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .open-button:hover {
+            background-color: #d81b60;
+        }
+
+        .cube-container {
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-45deg);
+            animation: rotate 10s infinite linear;
+            display: none;
+        }
+
+        .cube {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .front {
+            transform: rotateY(0deg) translateZ(100px);
+            background-image: url('r1.jpg');
+            background-color: #f8bbd0;
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(100px);
+            background-image: url('r2.jpeg');
+            background-color: #f8bbd0;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-image: url('r1.jpg');
+            background-color: #f8bbd0;
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+            background-image: url('r2.jpeg');
+            background-color: #f8bbd0;
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+            background-image: url('r1.jpg');
+            background-color: #f8bbd0;
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+            background-image: url('r2.jpeg');
+            background-color: #f8bbd0;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(-30deg) rotateY(-45deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(315deg);
+            }
+        }
+
+        .message {
+            display: none;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            color: #880e4f;
+            background-color: rgba(255, 235, 238, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+
+        .message p {
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="gift-container">
+        <div class="lid"></div>
+        <div class="box">
+            <div class="ribbon vertical"></div>
+            <div class="ribbon horizontal"></div>
+        </div>
+        <button class="open-button" onclick="openGift()">Open Gift</button>
+    </div>
+
+    <div class="cube-container">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+
+    <div class="message" id="message">
+        <p><strong>Happy Birthday, Lachuzz!</strong></p>
+        <p>I love you, Lachuzz!</p>
+        <p>My friend told me a beautiful girl was coming to the school. I replied, 'So what?' and left. But the beautiful
+            girl joined NSS. I saw her for the first time in NSS; she was very beautiful, and her nose ring (mukuti) was
+            stunning.</p>
+        <p>One day, I drew her picture and gave it to her, but it wasn't exact. Another day, I drew another picture of
+            her from Instagram and gave it to her; she liked that picture. One day, I proposed to her, giving her a rose
+            and a picture. She took the rose and walked away. She replied online that she had no interest in love. For
+            many months, I loved her and proposed to her on stage, but she rejected me, breaking my heart. Finally, many
+            months later, she accepted my love.</p>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="tum.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function openGift() {
+            document.querySelector('.lid').style.transform = 'rotateX(-120deg) translateZ(100px)';
+            setTimeout(function () {
+                document.querySelector('.gift-container').style.display = 'none';
+                document.querySelector('.cube-container').style.display = 'block';
+                document.getElementById('message').style.display = 'block';
+                document.getElementById('backgroundMusic').play();
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
